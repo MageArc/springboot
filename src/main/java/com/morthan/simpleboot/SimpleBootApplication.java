@@ -1,5 +1,6 @@
 package com.morthan.simpleboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.Arrays;
 
 @SpringBootApplication
+@MapperScan("com.morthan.simpleboot.bean.mapper")
 public class SimpleBootApplication {
 
     public static void main(String[] args) {
@@ -23,10 +25,11 @@ public class SimpleBootApplication {
 
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
-            for (String beanName : beanNames) {
-                System.out.println(beanName);
-            }
+//            for (String beanName : beanNames) {
+//                System.out.println(beanName);
+//            }
 
         };
     }
+
 }
